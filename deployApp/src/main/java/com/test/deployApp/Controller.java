@@ -11,6 +11,6 @@ public class Controller {
 	
 	@GetMapping(path = "/testMethod", produces = "application/json")
 	public String testMethod() {
-		return "Application is running.";
+		return "Application is running";
 	}
 }
