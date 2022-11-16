@@ -12,20 +12,31 @@ import com.test.deployApp.vo.TestVOClass;
 @RequestMapping(path = "/testApp")
 public class Controller {
 
-	
 	@GetMapping(path = "/testMethod", produces = "application/json")
 	public String testMethod() {
 		return "Application is running.";
 	}
-	
+
 	@PostMapping(path = "/testPostMapping", produces = "application/json")
 	public TestVOClass postMappingMethod(@RequestBody TestVOClass testVOInput) {
-		
+
 		TestVOClass testVOClass = new TestVOClass();
-		
+
 		testVOClass.setName(testVOInput.getName());
 		testVOClass.setAge(testVOInput.getAge());
-		
+
 		return testVOClass;
 	}
+
+	@GetMapping(path = "/testMethodWithReturnType", produces = "application/json")
+	public TestVOClass testMethodWithReturnType() {
+
+		TestVOClass testVOClass = new TestVOClass();
+
+		testVOClass.setName("TempName");
+		testVOClass.setAge(23);
+
+		return testVOClass;
+	}
+
 }
